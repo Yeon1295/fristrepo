@@ -2,4 +2,5 @@
 
 ![alt text][id]
 
-[id]: /favicon.ico "Title"
+[id]: /images/bg.jpg "Title"
+
