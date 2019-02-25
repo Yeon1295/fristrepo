@@ -1,4 +1,4 @@
-  Entity Framework 6
+# Entity Framework 6
 
 - object-relational mapper (O/RM) for .NET
 
@@ -9,6 +9,7 @@ Install-Package EntityFramework -Version <number>
 Install-Package EntityFramework -Pre 
 ```   
 ### Working with DbContext
+
 ##### Defining a DbContext derived class
 
 ```
@@ -101,7 +102,7 @@ public class Department
 }
 ```
 ##### Configuring or mapping relationships
- Use **Data Annotations** and **Fluent API** to To configure relationships
+- Use **Data Annotations** and **Fluent API** to To configure relationships
 
 ##### Creating and modifying relationships
 
@@ -141,12 +142,12 @@ course.Department = null;
 
 - in NET 4.5, you can set the relationship to null without loading the related end. You can also set the current value to null.
 ```
-context.Entry(course).Reference(c => c.Department).CurrentValue = null;
+	context.Entry(course).Reference(c => c.Department).CurrentValue = null;
 ```
 
 - By deleting or adding an object in an entity collection.
 ```
-department.Courses.Add(newCourse);
+	department.Courses.Add(newCourse);
 ```
 
 - By using the ChangeRelationshipState method to change the state of the specified relationship between two entity objects.
@@ -161,9 +162,9 @@ department.Courses.Add(newCourse);
 ```
 - Note that if you are updating (not just adding) a relationship, you must delete the old relationship after adding the new one:
 ```
-((IObjectContextAdapter)context).ObjectContext.
-  ObjectStateManager.
-  ChangeRelationshipState(course, oldInstructor, c => c.Instructor, EntityState.Deleted);
+	((IObjectContextAdapter)context).ObjectContext.
+	  ObjectStateManager.
+	  ChangeRelationshipState(course, oldInstructor, c => c.Instructor, EntityState.Deleted);
 ```
   
  ##### Synchronizing the changes between the foreign keys and navigation properties
@@ -179,7 +180,7 @@ department.Courses.Add(newCourse);
 - In Entity Framework you use most commonly use the navigation properties to load entities that are related to the returned entity 
   by the defined association.
   
-# > Note
+> **Note**
 > In a foreign key association, when you load a related end of a dependent object, the related object will be loaded based on the
 > foreign key value of the dependent that is currently in memory:
 
