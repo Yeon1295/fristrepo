@@ -265,8 +265,7 @@ Copy
 
 - Indexes that span multiple columns are specified by using the same name in multiple Index annotations for a given table. 
   When you create multi-column indexes, you need to specify an order for the columns in the index.
-  
-  ```
+```
     public class Post
     {
         public int Id { get; set; }
@@ -292,7 +291,7 @@ Copy
   to help code first understand how to build the relationship between the two classes —using the Post.BlogId property — 
   as well as how to specify constraints in the database.
   
- ```
+```
      public class Post
     {
             public int Id { get; set; }
@@ -316,6 +315,7 @@ Copy
 
 - The Person class has navigation properties back to the Post, one for all of the posts written by the person 
   and one for all of the posts updated by that person.
+  
 ```
     public class Person
     {
@@ -344,7 +344,7 @@ Copy
   
   ### Summary
   
-  - DataAnnotations not only let you describe client and server side validation in your code first classes, 
+ - DataAnnotations not only let you describe client and server side validation in your code first classes, 
     but they also allow you to enhance and even correct the assumptions that code first will make about your classes 
     based on its conventions. 
  - With DataAnnotations you can not only drive database schema generation, but you can also map your code first classes 
