@@ -165,16 +165,16 @@ Copy
   the database when a user edits or deletes an entity. 
  - In EF Designer, this aligns with setting a property's ConcurrencyMode to Fixed.
  
- ```
+```
      [ConcurrencyCheck, MaxLength(10, ErrorMessage="BloggerName must be 10 characters or less"),MinLength(5)]
     public string BloggerName { get; set; }
-    
+```    
   
-  -- The *SaveChanges* will success only the following conditions are made. 
-   ```
+- The *SaveChanges* will success only the following conditions are made. 
+```
        where (([PrimaryTrackingKey] = @4) and ([BloggerName] = @5))
        @4=1,@5=N'Julie'
- ```
+```
  
 ### TimeStamp
  - It's more common to use rowversion or timestamp fields for concurrency checking. 
