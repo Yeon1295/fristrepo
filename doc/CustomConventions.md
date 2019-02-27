@@ -13,7 +13,7 @@
 ### Our Model
 
 ```
-using System;
+    using System;
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
@@ -68,10 +68,10 @@ using System;
                         .Configure(p => p.IsKey());
         }
     }
-    ```
+```
     
-    - This will configure all properties called Key to be the primary key of their entity, 
-      but only if they are an integer.
+  - This will configure all properties called Key to be the primary key of their entity, 
+    but only if they are an integer.
       
 ```
       modelBuilder.Properties<int>()
